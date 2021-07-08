@@ -10,6 +10,7 @@ class newEventForm extends StatefulWidget {
 
 class _newEventFormState extends State<newEventForm> {
   late List<bool> isSelected;
+  String dropDownValue = "2" ;
   @override
   void initState() {
     isSelected = [true, false, false];
@@ -44,8 +45,31 @@ class _newEventFormState extends State<newEventForm> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children:<Widget>[
-                Text("Sport:"),
+                Text("Persons:"),
                 SizedBox(width: size.width*0.03),
+                DropdownButton<String>(
+                  value: dropDownValue,
+                  icon: const Icon(Icons.arrow_downward),
+                  iconSize: 24,
+                  elevation: 16,
+                  style: const TextStyle(color: Colors.deepPurple),
+                  underline: Container(
+                    height: 2,
+                    color: Colors.deepPurpleAccent,
+                  ),
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      dropDownValue = newValue!;
+                    });
+                  },
+                  items: <String>["2", "3", "4", "5","6","7","8","9","10"]
+                      .map<DropdownMenuItem<String>>((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                )
 
               ],
             )

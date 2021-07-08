@@ -16,7 +16,25 @@ class _nearMePageState extends State<nearMePage> {
         backgroundColor: Colors.green[600],
         title: Text("Sport Venue(s) Near You")
       ),
-      body: GoogleMap(initialCameraPosition: CameraPosition(target: LatLng(3.597031, 98.678513), zoom: 12)),
+      body: Stack(
+        children:<Widget>[
+          GoogleMap(initialCameraPosition: CameraPosition(target: LatLng(3.597031, 98.678513), zoom: 12)),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children:<Widget>[
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Search Here',
+                  filled: true,
+                  fillColor: Colors.white,
+                ),
+              )
+            ]
+          )
+        ]
+      )
     );
   }
 }
