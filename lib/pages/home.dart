@@ -38,7 +38,7 @@ class _HomesState extends State<Homes> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green[600],
+        backgroundColor: Colors.green[800],
         title: Container(
           height: 25,
           child: Image.asset('images/logo-demo.png', scale: 2),
@@ -59,7 +59,7 @@ class _HomesState extends State<Homes> {
             Container(
               height: 35,
               decoration: BoxDecoration(
-                  color: Colors.green[600],
+                  color: Colors.green[800],
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(8),
                       topRight: Radius.circular(8))),

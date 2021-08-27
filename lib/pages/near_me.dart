@@ -13,7 +13,7 @@ class _nearMePageState extends State<nearMePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        backgroundColor: Colors.green[600],
+        backgroundColor: Colors.green[800],
         title: Text("Sport Venue(s) Near You")
       ),
       body: Stack(

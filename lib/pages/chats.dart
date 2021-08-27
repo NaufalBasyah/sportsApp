@@ -10,7 +10,7 @@ class _ChatsState extends State<Chats> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.green[600],
+          backgroundColor: Colors.green[800],
           title: Text("Make a New Event")
       ),
       body: newEventForm(),

@@ -14,7 +14,7 @@ class ProfileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Colors.green[600];
+    final color = Colors.green[800];
 
     return Center(
       child: Stack(

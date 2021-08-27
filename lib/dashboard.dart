@@ -4,6 +4,7 @@ import 'pages/orders.dart';
 import 'pages/chats.dart';
 import 'pages/near_me.dart';
 import 'pages/account.dart';
+import '/pages/stats_screen.dart';
 
 
 
@@ -18,7 +19,7 @@ class dashboardPage extends StatefulWidget {
 
 class _dashboardPageState extends State<dashboardPage> {
   int i = 0;
-  final List<Widget> pages = [Homes(), Orders(), Chats(), nearMePage(), Accounts()];
+  final List<Widget> pages = [Homes(), Orders(), Chats(), nearMePage(), StatsScreen()];
   void _incrementTab(index) {
     setState(() {
       i = index;
@@ -30,6 +31,7 @@ class _dashboardPageState extends State<dashboardPage> {
       body: pages[i],
       bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.green[800],
           currentIndex: i,
           onTap: (index) {
             _incrementTab(index);
