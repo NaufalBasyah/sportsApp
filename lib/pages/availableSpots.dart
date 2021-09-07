@@ -22,15 +22,15 @@ class _availableSpotsPageState extends State<availableSpotsPage> {
               Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children:<Widget>[
-                    // const TextField(
-                    //   obscureText: true,
-                    //   decoration: InputDecoration(
-                    //     border: OutlineInputBorder(),
-                    //     labelText: 'Search Here',
-                    //     filled: true,
-                    //     fillColor: Colors.white,
-                    //   ),
-                    // )
+                    const TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Search Here',
+                        filled: true,
+                        fillColor: Colors.white,
+                      ),
+                    )
                   ]
               )
             ]

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_test2/pages/availableSpots.dart';
+import '/pages/near_me.dart';
 
 class newEventForm extends StatefulWidget {
   const newEventForm({Key? key}) : super(key: key);
@@ -231,10 +233,16 @@ class _newEventFormState extends State<newEventForm> {
                    style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.green[800]!),
                    fixedSize: MaterialStateProperty.all<Size>(Size(200,50))
                    ),
-                   onPressed: (){}, child: Text('Make Appointment',style: TextStyle(
+                   onPressed: (){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => nearMePage()),
+                     );
+                   }, child: Text('Make Appointment',style: TextStyle(
                    fontSize: 18,
                    color: Colors.white
-               )))
+               ),
+               ))
 
 
              ]
