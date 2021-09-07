@@ -39,6 +39,7 @@ class _HomesState extends State<Homes> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[800],
+        leading:Container(),
         title: Container(
           height: 25,
           child: Image.asset('images/logo-demo.png', scale: 2),

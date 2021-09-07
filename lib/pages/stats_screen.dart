@@ -2,7 +2,7 @@ import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
 import '/config/palette.dart';
 import '/config/styles.dart';
-import '/data/data.dart';
+import '/pages/account.dart';
 
 import 'stats_grid.dart';
 
@@ -17,10 +17,18 @@ class _StatsScreenState extends State<StatsScreen> {
     final size= MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.green,
+      appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Colors.white, //change your color here
+          ),
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+
+      ),
       body: CustomScrollView(
         physics: ClampingScrollPhysics(),
         slivers: <Widget>[
-          SliverPadding(padding: const EdgeInsets.symmetric(vertical: 20.0)),
+          // SliverPadding(padding: const EdgeInsets.symmetric(vertical: 20.0)),
           _buildHeader(),
           _buildRegionTabBar(),
           SliverPadding(

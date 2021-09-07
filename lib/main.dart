@@ -24,7 +24,8 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.green[600],
           dividerColor: Colors.black
       ),
-      home: dashboardPage(title: "Name Here"),
+      // home: dashboardPage(title: "Name Here"),
+      home: welcomePage(),
     );
   }
 }

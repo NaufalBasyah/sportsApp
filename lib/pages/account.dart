@@ -23,7 +23,23 @@ class _AccountsState extends State<Accounts> {
           Image(image: NetworkImage('https://previews.123rf.com/images/suphaporn/suphaporn1802/suphaporn180200145/95068631-soccer-football-on-corner-kick-line-of-ball-and-a-soccer-field-football-field-background-texture.jpg'),
           fit: BoxFit.cover,
           )
-          ,Container(
+          ,
+
+          ListView(
+            physics: BouncingScrollPhysics(),
+            children: [
+              SizedBox(height: size.height*.2),
+              ProfileWidget(
+                imagePath: user.imagePath,
+                onClicked: () async {},
+              ),
+              const SizedBox(height: 24),
+              buildName(user),
+              const SizedBox(height: 24),
+              buildAbout(user),
+            ],
+          ),
+          Container(
             alignment: Alignment.topRight,
             child:ClipOval(
               child: Material(
@@ -40,21 +56,6 @@ class _AccountsState extends State<Accounts> {
                 ),
               ),
             ),
-          ),
-
-          ListView(
-            physics: BouncingScrollPhysics(),
-            children: [
-              SizedBox(height: size.height*.2),
-              ProfileWidget(
-                imagePath: user.imagePath,
-                onClicked: () async {},
-              ),
-              const SizedBox(height: 24),
-              buildName(user),
-              const SizedBox(height: 24),
-              buildAbout(user),
-            ],
           ),
         ],
       )

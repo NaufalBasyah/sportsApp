@@ -19,7 +19,7 @@ class dashboardPage extends StatefulWidget {
 
 class _dashboardPageState extends State<dashboardPage> {
   int i = 0;
-  final List<Widget> pages = [Homes(), Orders(), Chats(), nearMePage(), StatsScreen()];
+  final List<Widget> pages = [Homes(), Orders(), Chats(), nearMePage(), Accounts()];
   void _incrementTab(index) {
     setState(() {
       i = index;

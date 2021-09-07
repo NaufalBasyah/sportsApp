@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'constant.dart';
+import 'dashboard.dart';
 // import 'logInPage.dart';
 // import 'signUpPage.dart';
 class welcomePage extends StatefulWidget {
@@ -24,10 +24,10 @@ class _welcomePageState extends State<welcomePage> {
                   width: double.infinity,
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.green[600],
+                        color: Colors.lightGreen,
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.87), BlendMode.dstATop),
+                          colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.45), BlendMode.dstATop),
                           image: AssetImage("images/soccer_shoes.jpg"))
                     ),
                   ),
@@ -37,13 +37,14 @@ class _welcomePageState extends State<welcomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(height: size.height*.15),
                       Container(
                         width: size.width,
-                        height: size.height*0.45,
+                        height: size.height*0.3,
                         child: Image.asset('images/logo-demo.png',),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.only(left: size.width*0.09),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
@@ -52,37 +53,66 @@ class _welcomePageState extends State<welcomePage> {
                         ),
                       ),
                       SizedBox(height: 30.0,),
-                      TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Email',
-                          suffixIcon: Icon(Icons.email),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0),
+                      Container(
+                        width: size.width*.85,
+                        child:TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Email',
+                            suffixIcon: Icon(Icons.email),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black, width: 2.0),
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.green[800]!,width: 2.0),
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+
                           ),
-                        ),
+                          cursorColor: Colors.green[800]!,
+                        )
                       ),
                       SizedBox(height: 20.0,),
-                      TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          hintText: 'Password',
-                          suffixIcon: Icon(Icons.visibility_off),
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20.0),
+                      Container(
+                        width: size.width*.85,
+                        child:TextField(
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            hintText: 'Password',
+                            suffixIcon: Icon(Icons.visibility_off),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black,width: 2.0),
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.green[800]!,width: 2.0),
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            ),
+                          cursorColor: Colors.green[800]!,
                           ),
                         ),
-                      ),
                       SizedBox(height: 30.0,),
                       Padding(
-                        padding: const EdgeInsets.all(10.0),
+                        padding: EdgeInsets.only(left: size.width*0.09,right:  size.width*0.09),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text('Forget password?',style: TextStyle(fontSize: 12.0),),
                             ElevatedButton(
                               child: Text('Login'),
-                              // color: Color(0xffEE7B23),
-                              onPressed: (){},
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.green[800],
+                                  padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+                                  textStyle: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold)),
+                              onPressed: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => dashboardPage(title: "Name Here")),
+                                );
+                              },
                             ),
                           ],
                         ),
@@ -99,7 +129,7 @@ class _welcomePageState extends State<welcomePage> {
                                 TextSpan(
                                   text: 'Signup',
                                   style: TextStyle(
-                                      color: Color(0xffEE7B23)
+                                      color: Colors.white,
                                   ),
                                 ),
                               ]
