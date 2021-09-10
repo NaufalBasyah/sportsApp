@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test_test2/pages/availableSpots.dart';
 import '/pages/near_me.dart';
-
+import '/pages/availableSpots.dart';
 class newEventForm extends StatefulWidget {
   const newEventForm({Key? key}) : super(key: key);
 
@@ -236,7 +236,7 @@ class _newEventFormState extends State<newEventForm> {
                    onPressed: (){
                      Navigator.push(
                        context,
-                       MaterialPageRoute(builder: (context) => nearMePage()),
+                       MaterialPageRoute(builder: (context) => availableSpotsPage()),
                      );
                    }, child: Text('Make Appointment',style: TextStyle(
                    fontSize: 18,
